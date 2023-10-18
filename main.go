@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	Target := flag.String("target", "127.0.0.1", "gnmi target")
+	Target := flag.String("target", "172.20.20.2", "gnmi target")
 	Port := flag.String("port", "6030", "gNMI port default is 6030")
 	Username := flag.String("username", "admin", "admin")
 	Password := flag.String("password", "admin", "admin")
@@ -27,7 +27,7 @@ func main() {
 	if *DeleteNtpAddress != "" {
 		connectgnmi.Delete(*Target, *Port, *Username, *Password, *DeleteNtpAddress)
 	}
-	if !*Subscribe {
+	if *Subscribe == true {
 		connectgnmi.Subscribe(*Target, *Port, *Username, *Password)
 	} else {
 		connectgnmi.Get(*Target, *Port, *Username, *Password)

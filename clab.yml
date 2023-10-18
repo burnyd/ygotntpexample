@@ -7,7 +7,7 @@ topology:
   nodes:
     ceos1:
       kind: ceos
-      image:
+      image: ceoslab:4.29.2F
       ports:
       - 4001:6030
       - 4444:443
@@ -20,7 +20,7 @@ topology:
 
     ceos2:
       kind: ceos
-      image: 
+      image: ceoslab:4.29.2F
       ports:
       - 4002:6030
       - 4445:443
