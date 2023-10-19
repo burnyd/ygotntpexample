@@ -30,6 +30,7 @@ func Set(Target, Port, Username, Password, ntpserver string) {
 		Type:   "update",
 		Path:   gnmi.SplitPath(paths[0]),
 		Origin: origin,
+		Val:    ntpserver,
 	}
 
 	setOps = append(setOps, op)
